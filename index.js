@@ -18,6 +18,7 @@ app.use(cors());
 //El endpoint tinee una ruta (nombre), dos parametros request(peticion) y response(respuesta)
 //Request contiene la información de la petición que hace el cliente
 //Response contiene la información que el servidor devuelve al cliente
+/*
 const productos =[
     {
         id: 1, nombre: 'Producto 1', precio: 3383
@@ -30,6 +31,7 @@ const productos =[
     }
 
 ]
+*/
 
 app.get('/productos', async(req, res) => {
     const data = await services.getProductos();
@@ -52,7 +54,7 @@ app.get('/productos/:id', async(req, res)=>{
 
 //Creamos el metodo para agregar un producto
 app.post('/productos', async(req, res) =>{
-    const body = req.body.json;
+    const body = req.body;
 
     //productos.push(body);
     await services.createProducts(body);
