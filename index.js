@@ -5,6 +5,7 @@
 
 //Importar express
 import express from 'express';
+import cors from 'cors';
 import conectar, {pool} from './database.js';
 import services from './services.js';
 
@@ -12,6 +13,7 @@ import services from './services.js';
 const app = express();
 //Middleware: capa que se ejecuta antes de llamada de un servicio
 app.use(express.json());
+app.use(cors());
 //Crear una ruta(post, get, put, delete) **peticiones** endpoint
 //El endpoint tinee una ruta (nombre), dos parametros request(peticion) y response(respuesta)
 //Request contiene la información de la petición que hace el cliente
